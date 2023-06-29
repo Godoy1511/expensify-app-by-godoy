@@ -12,6 +12,7 @@ const AppRouter = () => (
     <BrowserRouter>
         <div>
             <Header />
+            <div>{JSON.stringify(process.env)}</div>
             <Switch>
                 <Route path="/" component={ExpenseDashboardPage} exact={true} />
                 <Route path="/create" component={AddExpensePage} />
