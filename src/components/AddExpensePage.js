@@ -8,7 +8,6 @@ const AddExpensePage = (props) => (
         <h1>Add Expense:</h1>
         <ExpenseForm 
             onSubmit={(expense) => {
-                console.log("I love this function!")
                 props.dispatch(addExpense(expense));
                 props.history.push("/"); // Serve para redirecionar o usuário à página de URL final "/"
             }}
