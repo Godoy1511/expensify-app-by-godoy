@@ -6,8 +6,6 @@
 
 const path = require("path");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const webpack = require('webpack');
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = (env) => {
     const isProduction = env === "production";
@@ -46,14 +44,6 @@ module.exports = (env) => {
         },
         plugins: [
             CSSExtract,
-            // new HtmlWebpackPlugin({
-            //     'base': isProduction ? 'https://godoy1511.github.io/expensify-app-by-godoy/' : "/"
-            //   })
-            new webpack.DefinePlugin({
-                "process.env": {
-                  NODE_ENV: isProduction ? "production" : "development"
-                }
-              }),
         ],
         devtool: isProduction ? "source-map" : "inline-source-map",
         devServer: {
