@@ -5,12 +5,9 @@
   "license": "MIT",
   "author": "Pedro Godoy",
   "scripts": {
-    "serve": "live-server public/",
-    "build:dev": "webpack",
-    "build:prod": "webpack -p --env production",
-    "deploy": "gh-pages -d public",
-    "dev-server": "webpack-dev-server",
-    "test": "jest"
+    "dev-server": "webpack && webpack-dev-server",
+    "build-prod": "webpack -p --env production",
+    "deploy": "gh-pages -d public"
   },
   "dependencies": {
     "babel-cli": "6.24.1",
@@ -24,7 +21,7 @@
     "express": "4.15.4",
     "extract-text-webpack-plugin": "3.0.0",
     "firebase": "4.2.0",
-    "html-webpack-plugin": "^5.5.3",
+    "html-webpack-plugin": "^3.0.0",
     "jest": "20.0.4",
     "live-server": "^1.2.2",
     "moment": "2.18.1",
