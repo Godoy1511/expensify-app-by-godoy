@@ -6,6 +6,7 @@
 
 const path = require("path");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = (env) => {
     const isProduction = env === "production";
@@ -44,10 +45,20 @@ module.exports = (env) => {
         },
         plugins: [
             CSSExtract,
+            new HtmlWebpackPlugin({
+                title: "Expensify",
+                filename: "index.html",
+                template: path.join(__dirname, "index.ejs")
+            }),
+            new HtmlWebpackPlugin({
+                title: "Expensify",
+                filename: path.join(__dirname, "index.html"),
+                template: path.join(__dirname, "index.ejs")
+            })
         ],
         devtool: isProduction ? "source-map" : "inline-source-map",
         devServer: {
-            contentBase: __dirname,
+            contentBase: path.join(__dirname, "public"),
             historyApiFallback: true
         }
     };
