@@ -4,8 +4,10 @@ html {
 
 // no font-family, caso o PCU nao tenha uma determinada fonte, ele passa para a próxima
 body {
+    color: $dark-grey;
     font-family: Helvetica, Arial, sans-serif;
     font-size: $m-size;
+    line-height: 1.6;
 }
 
 button {
